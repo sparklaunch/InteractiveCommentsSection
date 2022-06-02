@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9072BBCC28483B3B00DB58B5 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9072BBCB28483B3B00DB58B5 /* Comment.swift */; };
+		9072BBCE28483C1700DB58B5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9072BBCD28483C1700DB58B5 /* User.swift */; };
 		90C8577E284830FE00AEFB30 /* InteractiveCommentsSectionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8576E284830FD00AEFB30 /* InteractiveCommentsSectionApp.swift */; };
 		90C8577F284830FE00AEFB30 /* InteractiveCommentsSectionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8576E284830FD00AEFB30 /* InteractiveCommentsSectionApp.swift */; };
 		90C85780284830FE00AEFB30 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8576F284830FD00AEFB30 /* ContentView.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9072BBCB28483B3B00DB58B5 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		9072BBCD28483C1700DB58B5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		90C8576E284830FD00AEFB30 /* InteractiveCommentsSectionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveCommentsSectionApp.swift; sourceTree = "<group>"; };
 		90C8576F284830FD00AEFB30 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		90C85770284830FE00AEFB30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -90,6 +94,8 @@
 		90C8578D2848311A00AEFB30 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9072BBCB28483B3B00DB58B5 /* Comment.swift */,
+				9072BBCD28483C1700DB58B5 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -200,7 +206,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9072BBCE28483C1700DB58B5 /* User.swift in Sources */,
 				90C85780284830FE00AEFB30 /* ContentView.swift in Sources */,
+				9072BBCC28483B3B00DB58B5 /* Comment.swift in Sources */,
 				90C8577E284830FE00AEFB30 /* InteractiveCommentsSectionApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
