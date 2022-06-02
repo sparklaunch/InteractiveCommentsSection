@@ -12,3 +12,10 @@ struct User: Identifiable {
     let photo: Image
     let name: String
 }
+
+extension User {
+    init() {
+        self.photo = Image("JuliusOmo")
+        self.name = "juliusomo"
+    }
+}

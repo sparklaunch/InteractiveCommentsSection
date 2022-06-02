@@ -15,3 +15,12 @@ struct Comment: Identifiable {
     let votes: Int
     var replies: [Comment] = []
 }
+
+extension Comment {
+    init() {
+        self.author = .init()
+        self.writtenDate = Date.now
+        self.content = "Hello, World!!"
+        self.votes = 3
+    }
+}
