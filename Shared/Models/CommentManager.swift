@@ -8,7 +8,7 @@
 import SwiftUI
 
 class CommentManager: ObservableObject {
-    @Published var dummyComments: [Comment]
+    @Published var comments: [Comment]
     init() {
         let julius = User(photo: .init("JuliusOmo"), name: "juliusomo")
         let amy = User(photo: .init("AmyRobson"), name: "amyrobson")
@@ -16,7 +16,7 @@ class CommentManager: ObservableObject {
         let ramses = User(photo: .init("RamsesMiron"), name: "ramsesmiron")
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy/MM/dd HH:mm"
-        self.dummyComments = [
+        self.comments = [
             .init(author: amy, writtenDate: dateFormatter.date(from: "2022/05/02 09:41") ?? .now, content: """
 Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.
 """, votes: 12),

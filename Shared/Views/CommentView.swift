@@ -1,0 +1,125 @@
+//
+//  CommentView.swift
+//  Interactive Comments Section (iOS)
+//
+//  Created by Jinwook Kim on 2022/06/02.
+//
+
+import SwiftUI
+
+struct CommentView: View {
+    let comment: Comment
+    var body: some View {
+        ZStack {
+            Color.white
+            VStack(alignment: .leading, spacing: 16) {
+                CommentHeaderView(photo: comment.author.photo, name: comment.author.name, since: comment.since)
+                CommentContentView(content: comment.content)
+                CommentFooterView(votes: comment.votes)
+            }
+            .padding()
+        }
+        .cornerRadius(15)
+        .shadow(radius: 5)
+        .fixedSize(horizontal: false, vertical: true)
+        .padding(.horizontal)
+        .padding(.vertical, 8)
+    }
+}
+
+struct CommentHeaderView: View {
+    let photo: Image
+    let name: String
+    let since: String
+    var body: some View {
+        HStack {
+            HStack(spacing: 16) {
+                photo
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 48)
+                Text(name)
+                    .font(.title3.bold())
+            }
+            Spacer()
+            Text(since)
+                .font(.title3.bold())
+                .foregroundColor(.init("TextColor"))
+        }
+    }
+}
+
+struct CommentContentView: View {
+    let content: String
+    var body: some View {
+        Text(content)
+            .foregroundColor(.init("TextColor"))
+            .lineSpacing(5)
+    }
+}
+
+struct CommentVoteView: View {
+    let votes: Int
+    var body: some View {
+        HStack(spacing: 16) {
+            Button {
+                // TODO: UPVOTE.
+            } label: {
+                Image(decorative: "Plus")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 16)
+            }
+            Text(votes, format: .number)
+                .font(.title3.bold())
+                .foregroundColor(.init("EmphasisColor"))
+            Button {
+                // TODO: DOWNVOTE.
+            } label: {
+                Image(decorative: "Minus")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 16)
+            }
+        }
+        .padding(12)
+        .background(Color("BackgroundColor"))
+        .cornerRadius(15)
+    }
+}
+
+struct CommentReplyView: View {
+    var body: some View {
+        Button {
+            // TODO: REPLY.
+        } label: {
+            HStack {
+                Image(decorative: "Reply")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 16)
+                Text("Reply")
+                    .font(.title3.bold())
+                    .foregroundColor(.init("EmphasisColor"))
+            }
+        }
+    }
+}
+
+struct CommentFooterView: View {
+    let votes: Int
+    var body: some View {
+        HStack {
+            CommentVoteView(votes: votes)
+            Spacer()
+            CommentReplyView()
+        }
+    }
+}
+
+struct CommentView_Previews: PreviewProvider {
+    static var previews: some View {
+        CommentView(comment: .init())
+            .previewLayout(.sizeThatFits)
+    }
+}

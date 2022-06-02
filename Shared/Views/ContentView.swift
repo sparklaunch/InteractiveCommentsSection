@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject private var commentManager: CommentManager
     var body: some View {
         ZStack {
             BackgroundView()
             ScrollView {
                 VStack {
-
+                    ForEach(commentManager.comments) { comment in
+                        CommentView(comment: comment)
+                    }
                 }
             }
         }
