@@ -10,10 +10,11 @@ import SwiftUI
 struct Comment: Identifiable {
     let id: UUID = .init()
     let author: User
-    let writtenDate: Date
+    var writtenDate: Date = .now
     let content: String
-    let votes: Int
+    var votes: Int = .zero
     var replies: [Comment] = []
+    var replyTo: User?
     var since: String {
         let intervalDifference = Date.now.timeIntervalSince(writtenDate)
         let dayDifference = Int((intervalDifference / 86400.0).rounded())

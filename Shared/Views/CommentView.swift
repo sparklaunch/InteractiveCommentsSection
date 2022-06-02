@@ -13,10 +13,7 @@ struct CommentView: View {
     var body: some View {
         HStack {
             if isReply {
-                Rectangle()
-                    .frame(width: 3)
-                    .foregroundColor(.init("DividerColor"))
-                    .padding([.leading])
+                HorizontalDividerView()
             }
             VStack(spacing: .zero) {
                 ZStack {
@@ -24,7 +21,7 @@ struct CommentView: View {
                     VStack {
                         VStack(alignment: .leading, spacing: 16) {
                             CommentHeaderView(photo: comment.author.photo, name: comment.author.name, since: comment.since)
-                            CommentContentView(content: comment.content)
+                            CommentContentView(replyTo: comment.replyTo?.name, content: comment.content)
                             CommentFooterView(votes: comment.votes)
                         }
                         .padding()
@@ -68,11 +65,22 @@ struct CommentHeaderView: View {
 }
 
 struct CommentContentView: View {
+    var replyTo: String?
     let content: String
     var body: some View {
-        Text(content)
-            .foregroundColor(.init("TextColor"))
-            .lineSpacing(5)
+        if let replyTo = replyTo {
+            let replyText = Text("@\(replyTo)")
+                .bold()
+                .foregroundColor(.init("EmphasisColor"))
+            let contentText = Text(content)
+                .foregroundColor(.init("TextColor"))
+            return Text("\(replyText) \(contentText)")
+                .lineSpacing(5)
+        } else {
+            return Text(content)
+                .foregroundColor(.init("TextColor"))
+                .lineSpacing(5)
+        }
     }
 }
 
@@ -132,6 +140,15 @@ struct CommentFooterView: View {
             Spacer()
             CommentReplyView()
         }
+    }
+}
+
+struct HorizontalDividerView: View {
+    var body: some View {
+        Rectangle()
+            .frame(width: 3)
+            .foregroundColor(.init("DividerColor"))
+            .padding([.leading])
     }
 }
 

@@ -26,10 +26,10 @@ Thanks!
 """, votes: 5, replies: [
     .init(author: ramses, writtenDate: dateFormatter.date(from: "2022/05/24 10:43") ?? .now, content: """
 If you're still new, I'd recommend focusing on the fundamentals of HTML, CSS, and JS before considering React. It's very tempting to jump ahead but lay a solid foundation first.
-""", votes: 4),
+""", votes: 4, replyTo: max),
     .init(author: julius, writtenDate: dateFormatter.date(from: "2022/05/25 09:46") ?? .now, content: """
     I couldn't agree more with this. Everything moves so fast and it always seems like everyone knows the newest library/framework. But the fundamentals are what stay constant.
-    """, votes: 2)
+    """, votes: 2, replyTo: ramses)
 ])
         ]
     }
