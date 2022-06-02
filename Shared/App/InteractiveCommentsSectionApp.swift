@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct InteractiveCommentsSectionApp: App {
+    @StateObject private var commentManager: CommentManager = .init()
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(commentManager)
         }
     }
 }
