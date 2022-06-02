@@ -17,6 +17,7 @@ struct ContentView: View {
                     ForEach(commentManager.comments) { comment in
                         CommentView(comment: comment)
                     }
+                    AddView()
                 }
             }
         }
