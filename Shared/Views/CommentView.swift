@@ -8,22 +8,40 @@
 import SwiftUI
 
 struct CommentView: View {
+    var isReply: Bool = false
     let comment: Comment
     var body: some View {
-        ZStack {
-            Color.white
-            VStack(alignment: .leading, spacing: 16) {
-                CommentHeaderView(photo: comment.author.photo, name: comment.author.name, since: comment.since)
-                CommentContentView(content: comment.content)
-                CommentFooterView(votes: comment.votes)
+        HStack {
+            if isReply {
+                Rectangle()
+                    .frame(width: 3)
+                    .foregroundColor(.init("DividerColor"))
+                    .padding([.leading])
             }
-            .padding()
+            VStack(spacing: .zero) {
+                ZStack {
+                    Color.white
+                    VStack {
+                        VStack(alignment: .leading, spacing: 16) {
+                            CommentHeaderView(photo: comment.author.photo, name: comment.author.name, since: comment.since)
+                            CommentContentView(content: comment.content)
+                            CommentFooterView(votes: comment.votes)
+                        }
+                        .padding()
+                    }
+                }
+                .cornerRadius(15)
+                .shadow(radius: 5)
+                .fixedSize(horizontal: false, vertical: true)
+                .padding(.horizontal)
+                .padding(.vertical, 8)
+                if !comment.replies.isEmpty {
+                    ForEach(comment.replies) { reply in
+                        CommentView(isReply: true, comment: reply)
+                    }
+                }
+            }
         }
-        .cornerRadius(15)
-        .shadow(radius: 5)
-        .fixedSize(horizontal: false, vertical: true)
-        .padding(.horizontal)
-        .padding(.vertical, 8)
     }
 }
 
