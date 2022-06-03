@@ -18,7 +18,14 @@ struct Comment: Identifiable {
     var since: String {
         let intervalDifference = Date.now.timeIntervalSince(writtenDate)
         let dayDifference = Int((intervalDifference / 86400.0).rounded())
-        return "\(dayDifference) days ago"
+        switch dayDifference {
+        case .zero:
+            return "Just now"
+        case 1...30:
+            return "\(dayDifference) days ago"
+        default:
+            return "Long ago"
+        }
     }
 }
 
