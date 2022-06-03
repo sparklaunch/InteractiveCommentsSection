@@ -12,13 +12,13 @@ struct AddView: View {
     var body: some View {
         ZStack {
             Color.white
-            VStack {
-                TextEditor(text: $text)
+            VStack(spacing: 16) {
+                AddTextEditorView()
                 HStack {
                     Image(decorative: "JuliusOmo")
                         .resizable()
                         .scaledToFit()
-                        .frame(height: 36)
+                        .frame(height: 48)
                     Spacer()
                     AddSendButtonView()
                 }

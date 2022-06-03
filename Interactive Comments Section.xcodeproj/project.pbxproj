@@ -20,6 +20,7 @@
 		9072BBE1284851BE00DB58B5 /* HorizontalDividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9072BBE0284851BE00DB58B5 /* HorizontalDividerView.swift */; };
 		9072BBE42849814D00DB58B5 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9072BBE32849814D00DB58B5 /* AddView.swift */; };
 		9072BBE62849825800DB58B5 /* AddSendButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9072BBE52849825800DB58B5 /* AddSendButtonView.swift */; };
+		9072BBE92849882C00DB58B5 /* AddTextEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9072BBE82849882C00DB58B5 /* AddTextEditorView.swift */; };
 		90C8577E284830FE00AEFB30 /* InteractiveCommentsSectionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8576E284830FD00AEFB30 /* InteractiveCommentsSectionApp.swift */; };
 		90C8577F284830FE00AEFB30 /* InteractiveCommentsSectionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8576E284830FD00AEFB30 /* InteractiveCommentsSectionApp.swift */; };
 		90C85780284830FE00AEFB30 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8576F284830FD00AEFB30 /* ContentView.swift */; };
@@ -42,6 +43,7 @@
 		9072BBE0284851BE00DB58B5 /* HorizontalDividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalDividerView.swift; sourceTree = "<group>"; };
 		9072BBE32849814D00DB58B5 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		9072BBE52849825800DB58B5 /* AddSendButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSendButtonView.swift; sourceTree = "<group>"; };
+		9072BBE82849882C00DB58B5 /* AddTextEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTextEditorView.swift; sourceTree = "<group>"; };
 		90C8576E284830FD00AEFB30 /* InteractiveCommentsSectionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveCommentsSectionApp.swift; sourceTree = "<group>"; };
 		90C8576F284830FD00AEFB30 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		90C85770284830FE00AEFB30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 			children = (
 				9072BBE52849825800DB58B5 /* AddSendButtonView.swift */,
 				9072BBE32849814D00DB58B5 /* AddView.swift */,
+				9072BBE82849882C00DB58B5 /* AddTextEditorView.swift */,
 			);
 			path = Add;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 			files = (
 				9072BBE42849814D00DB58B5 /* AddView.swift in Sources */,
 				9072BBDB2848517C00DB58B5 /* CommentVoteView.swift in Sources */,
+				9072BBE92849882C00DB58B5 /* AddTextEditorView.swift in Sources */,
 				9072BBE1284851BE00DB58B5 /* HorizontalDividerView.swift in Sources */,
 				9072BBD2284840A300DB58B5 /* BackgroundView.swift in Sources */,
 				9072BBDD2848519400DB58B5 /* CommentReplyView.swift in Sources */,
