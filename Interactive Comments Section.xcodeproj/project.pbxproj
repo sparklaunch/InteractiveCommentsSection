@@ -23,6 +23,7 @@
 		9072BBE92849882C00DB58B5 /* AddTextEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9072BBE82849882C00DB58B5 /* AddTextEditorView.swift */; };
 		9072BBEB28498DDA00DB58B5 /* CommentDeleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9072BBEA28498DDA00DB58B5 /* CommentDeleteView.swift */; };
 		9072BBED28498E9F00DB58B5 /* CommentEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9072BBEC28498E9F00DB58B5 /* CommentEditView.swift */; };
+		9072BBEF2849910100DB58B5 /* YouBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9072BBEE2849910100DB58B5 /* YouBadgeView.swift */; };
 		90C8577E284830FE00AEFB30 /* InteractiveCommentsSectionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8576E284830FD00AEFB30 /* InteractiveCommentsSectionApp.swift */; };
 		90C8577F284830FE00AEFB30 /* InteractiveCommentsSectionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8576E284830FD00AEFB30 /* InteractiveCommentsSectionApp.swift */; };
 		90C85780284830FE00AEFB30 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8576F284830FD00AEFB30 /* ContentView.swift */; };
@@ -48,6 +49,7 @@
 		9072BBE82849882C00DB58B5 /* AddTextEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTextEditorView.swift; sourceTree = "<group>"; };
 		9072BBEA28498DDA00DB58B5 /* CommentDeleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentDeleteView.swift; sourceTree = "<group>"; };
 		9072BBEC28498E9F00DB58B5 /* CommentEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentEditView.swift; sourceTree = "<group>"; };
+		9072BBEE2849910100DB58B5 /* YouBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouBadgeView.swift; sourceTree = "<group>"; };
 		90C8576E284830FD00AEFB30 /* InteractiveCommentsSectionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveCommentsSectionApp.swift; sourceTree = "<group>"; };
 		90C8576F284830FD00AEFB30 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		90C85770284830FE00AEFB30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				9072BBE0284851BE00DB58B5 /* HorizontalDividerView.swift */,
 				9072BBEA28498DDA00DB58B5 /* CommentDeleteView.swift */,
 				9072BBEC28498E9F00DB58B5 /* CommentEditView.swift */,
+				9072BBEE2849910100DB58B5 /* YouBadgeView.swift */,
 			);
 			path = Comment;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				9072BBCC28483B3B00DB58B5 /* Comment.swift in Sources */,
 				9072BBD028483CEA00DB58B5 /* CommentManager.swift in Sources */,
 				9072BBD42848414500DB58B5 /* CommentView.swift in Sources */,
+				9072BBEF2849910100DB58B5 /* YouBadgeView.swift in Sources */,
 				9072BBE62849825800DB58B5 /* AddSendButtonView.swift in Sources */,
 				90C8577E284830FE00AEFB30 /* InteractiveCommentsSectionApp.swift in Sources */,
 				9072BBDF284851A700DB58B5 /* CommentFooterView.swift in Sources */,

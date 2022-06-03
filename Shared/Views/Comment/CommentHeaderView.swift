@@ -11,6 +11,10 @@ struct CommentHeaderView: View {
     let photo: Image
     let name: String
     let since: String
+    let author: User
+    var isAuthor: Bool {
+        author == User()
+    }
     var body: some View {
         HStack {
             HStack(spacing: 16) {
@@ -18,8 +22,13 @@ struct CommentHeaderView: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 48)
-                Text(name)
-                    .font(.title3.bold())
+                HStack(spacing: 6) {
+                    Text(name)
+                        .font(.title3.bold())
+                    if isAuthor {
+                        YouBadgeView()
+                    }
+                }
             }
             Spacer()
             Text(since)

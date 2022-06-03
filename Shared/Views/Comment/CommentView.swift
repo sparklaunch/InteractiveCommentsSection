@@ -20,7 +20,7 @@ struct CommentView: View {
                     Color.white
                     VStack {
                         VStack(alignment: .leading, spacing: 16) {
-                            CommentHeaderView(photo: comment.author.photo, name: comment.author.name, since: comment.since)
+                            CommentHeaderView(photo: comment.author.photo, name: comment.author.name, since: comment.since, author: comment.author)
                             CommentContentView(replyTo: comment.replyTo?.name, content: comment.content)
                             CommentFooterView(votes: comment.votes, author: comment.author)
                         }
