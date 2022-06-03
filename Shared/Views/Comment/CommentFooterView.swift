@@ -18,8 +18,9 @@ struct CommentFooterView: View {
             CommentVoteView(votes: votes)
             Spacer()
             if isAuthor {
-                HStack {
+                HStack(spacing: 12) {
                     CommentDeleteView()
+                    CommentEditView()
                 }
             } else {
                 CommentReplyView()
