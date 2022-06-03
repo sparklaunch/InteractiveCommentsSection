@@ -22,7 +22,7 @@ struct CommentView: View {
                         VStack(alignment: .leading, spacing: 16) {
                             CommentHeaderView(photo: comment.author.photo, name: comment.author.name, since: comment.since)
                             CommentContentView(replyTo: comment.replyTo?.name, content: comment.content)
-                            CommentFooterView(votes: comment.votes)
+                            CommentFooterView(votes: comment.votes, author: comment.author)
                         }
                         .padding()
                     }

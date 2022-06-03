@@ -13,6 +13,15 @@ struct User: Identifiable {
     let name: String
 }
 
+extension User: Hashable {
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    static func ==(lhs: User, rhs: User) -> Bool {
+        lhs.name == rhs.name
+    }
+}
+
 extension User {
     init() {
         self.photo = Image("JuliusOmo")
