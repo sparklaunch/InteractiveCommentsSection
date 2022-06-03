@@ -33,4 +33,8 @@ If you're still new, I'd recommend focusing on the fundamentals of HTML, CSS, an
 ])
         ]
     }
+    func addComment(with text: String) {
+        let newComment: Comment = .init(author: .init(), writtenDate: .now, content: text, votes: .zero)
+        comments.append(newComment)
+    }
 }

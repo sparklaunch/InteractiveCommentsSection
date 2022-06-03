@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct AddSendButtonView: View {
+    @EnvironmentObject private var commentManager: CommentManager
+    @Binding var text: String
     var body: some View {
         Button {
-            // TODO: SEND A COMMENT.
+            commentManager.addComment(with: text)
+            text = ""
         } label: {
             Text("SEND")
                 .font(.title3.bold())
@@ -25,7 +28,8 @@ struct AddSendButtonView: View {
 
 struct AddSendButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        AddSendButtonView()
+        AddSendButtonView(text: .constant("Hello, World!!"))
+            .environmentObject(CommentManager())
             .padding()
             .previewLayout(.sizeThatFits)
     }

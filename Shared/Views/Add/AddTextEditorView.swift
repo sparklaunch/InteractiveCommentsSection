@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct AddTextEditorView: View {
-    @State private var text: String = ""
+    @EnvironmentObject private var commentManager: CommentManager
+    @Binding var text: String
     var body: some View {
         ZStack(alignment: .topLeading) {
             if text.isEmpty {
@@ -28,13 +29,17 @@ struct AddTextEditorView: View {
                 )
                 .frame(height: 120)
                 .opacity(text.isEmpty ? 0.25 : 1.0)
+                .onSubmit {
+                    commentManager.addComment(with: text)
+                }
         }
     }
 }
 
 struct AddTextEditorView_Previews: PreviewProvider {
     static var previews: some View {
-        AddTextEditorView()
+        AddTextEditorView(text: .constant("Hello, World!!"))
+            .environmentObject(CommentManager())
             .padding()
             .previewLayout(.sizeThatFits)
     }

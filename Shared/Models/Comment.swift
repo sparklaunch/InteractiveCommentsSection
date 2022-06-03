@@ -22,6 +22,15 @@ struct Comment: Identifiable {
     }
 }
 
+extension Comment: Hashable {
+    static func ==(lhs: Comment, rhs: Comment) -> Bool {
+        lhs.id == rhs.id
+    }
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+}
+
 extension Comment {
     init() {
         let dateFormatter = DateFormatter()

@@ -9,15 +9,24 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject private var commentManager: CommentManager
+    @Namespace private var bottomMost
     var body: some View {
         ZStack {
             BackgroundView()
-            ScrollView {
-                VStack {
-                    ForEach(commentManager.comments) { comment in
-                        CommentView(comment: comment)
+            ScrollViewReader { proxy in
+                ScrollView {
+                    VStack {
+                        ForEach(commentManager.comments) { comment in
+                            CommentView(comment: comment)
+                        }
+                        AddView()
+                            .id(bottomMost)
                     }
-                    AddView()
+                }
+                .onChange(of: commentManager.comments) { _ in
+                    withAnimation {
+                        proxy.scrollTo(bottomMost, anchor: .bottom)
+                    }
                 }
             }
         }
