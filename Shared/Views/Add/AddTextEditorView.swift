@@ -30,7 +30,9 @@ struct AddTextEditorView: View {
                 .frame(height: 120)
                 .opacity(text.isEmpty ? 0.25 : 1.0)
                 .onSubmit {
-                    commentManager.addComment(with: text)
+                    if !text.isEmpty {
+                        commentManager.addComment(with: text)
+                    }
                 }
         }
     }

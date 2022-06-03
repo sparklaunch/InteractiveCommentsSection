@@ -12,7 +12,9 @@ struct AddSendButtonView: View {
     @Binding var text: String
     var body: some View {
         Button {
-            commentManager.addComment(with: text)
+            if !text.isEmpty {
+                commentManager.addComment(with: text)
+            }
             text = ""
         } label: {
             Text("SEND")
