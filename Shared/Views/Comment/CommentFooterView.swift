@@ -8,14 +8,13 @@
 import SwiftUI
 
 struct CommentFooterView: View {
-    let votes: Int
-    let author: User
+    let comment: Comment
     var isAuthor: Bool {
-        author == User()
+        comment.author == User()
     }
     var body: some View {
         HStack {
-            CommentVoteView(votes: votes)
+            CommentVoteView(comment: comment)
             Spacer()
             if isAuthor {
                 HStack(spacing: 12) {

@@ -37,4 +37,29 @@ If you're still new, I'd recommend focusing on the fundamentals of HTML, CSS, an
         let newComment: Comment = .init(author: .init(), writtenDate: .now, content: text, votes: .zero)
         comments.append(newComment)
     }
+    func flatComments() -> [Comment] {
+        let commentsWithReplies = comments.filter { !$0.replies.isEmpty }
+        let replies = commentsWithReplies.reduce(into: []) { $0 += $1.replies }
+        return comments + replies
+    }
+    func upvote(for id: UUID) {
+        let theComment = flatComments().first {
+            $0.id == id
+        }
+        guard let theComment = theComment else {
+            fatalError("Comment ID not found!!")
+        }
+        theComment.upvote()
+        objectWillChange.send()
+    }
+    func downvote(for id: UUID) {
+        let theComment = flatComments().first {
+            $0.id == id
+        }
+        guard let theComment = theComment else {
+            fatalError()
+        }
+        theComment.downvote()
+        objectWillChange.send()
+    }
 }

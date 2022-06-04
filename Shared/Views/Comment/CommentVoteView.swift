@@ -8,22 +8,27 @@
 import SwiftUI
 
 struct CommentVoteView: View {
-    let votes: Int
+    @EnvironmentObject private var commentManager: CommentManager
+    let comment: Comment
     var body: some View {
         HStack(spacing: 16) {
             Button {
-                // TODO: UPVOTE.
+                withAnimation {
+                    commentManager.upvote(for: comment.id)
+                }
             } label: {
                 Image(decorative: "Plus")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 16)
             }
-            Text(votes, format: .number)
+            Text(comment.votes, format: .number)
                 .font(.title3.bold())
                 .foregroundColor(.init("EmphasisColor"))
             Button {
-                // TODO: DOWNVOTE.
+                withAnimation {
+                    commentManager.downvote(for: comment.id)
+                }
             } label: {
                 Image(decorative: "Minus")
                     .resizable()
