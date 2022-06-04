@@ -28,6 +28,7 @@ struct CommentEditView: View {
 struct CommentEditView_Previews: PreviewProvider {
     static var previews: some View {
         CommentEditView()
+            .padding()
             .previewLayout(.sizeThatFits)
     }
 }

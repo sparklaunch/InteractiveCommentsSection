@@ -12,8 +12,8 @@ class Comment: Identifiable, ObservableObject {
     let author: User
     private(set) var writtenDate: Date = .now
     let content: String
-    @Published var votes: Int = .zero
-    var replies: [Comment] = []
+    var votes: Int = .zero
+    @Published var replies: [Comment] = []
     var replyTo: User?
     var since: String {
         let intervalDifference = Date.now.timeIntervalSince(writtenDate)

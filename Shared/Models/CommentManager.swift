@@ -57,9 +57,28 @@ If you're still new, I'd recommend focusing on the fundamentals of HTML, CSS, an
             $0.id == id
         }
         guard let theComment = theComment else {
-            fatalError()
+            fatalError("Comment ID not found!!")
         }
         theComment.downvote()
         objectWillChange.send()
+    }
+    func delete(_ id: UUID) {
+        let commentIndex = comments.firstIndex {
+            $0.id == id
+        }
+        if let commentIndex = commentIndex {
+            comments.remove(at: commentIndex)
+        } else {
+            for comment in comments where !comment.replies.isEmpty {
+                let replyIndex = comment.replies.firstIndex {
+                    $0.id == id
+                }
+                guard let replyIndex = replyIndex else {
+                    fatalError("Reply ID not found!!")
+                }
+                comment.replies.remove(at: replyIndex)
+                // FIX: COMMENTS NOT REMOVED!!
+            }
+        }
     }
 }

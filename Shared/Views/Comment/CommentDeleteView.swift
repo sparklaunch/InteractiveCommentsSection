@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct CommentDeleteView: View {
+    @EnvironmentObject private var commentManager: CommentManager
+    let comment: Comment
+    @State private var isAlertVisible = false
     var body: some View {
         Button {
-            // TODO: DELETE A COMMENT.
+            withAnimation {
+                isAlertVisible = true
+            }
         } label: {
             HStack {
                 Image(decorative: "Delete")
@@ -22,12 +27,23 @@ struct CommentDeleteView: View {
                     .foregroundColor(.init("DeleteColor"))
             }
         }
+        .alert("Delete comment", isPresented: $isAlertVisible) {
+            Button("Delete", role: .destructive) {
+                withAnimation {
+                    commentManager.delete(comment.id)
+                }
+            }
+        } message: {
+            Text("Are you sure you want to delete this comment? This will remove the comment and can't be undone.")
+        }
     }
 }
 
 struct CommentDeleteView_Previews: PreviewProvider {
     static var previews: some View {
-        CommentDeleteView()
+        CommentDeleteView(comment: .init())
+            .environmentObject(CommentManager())
+            .padding()
             .previewLayout(.sizeThatFits)
     }
 }
